@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://l88vdhebidxd"]
+[gd_scene load_steps=10 format=3 uid="uid://l88vdhebidxd"]
 
 [ext_resource type="Script" uid="uid://mfjnnn3v262y" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://0ej7smtwlmmd" path="res://Assets/Skeleton/2.png" id="2_vgqql"]
@@ -34,6 +34,22 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
 size = Vector2(128, 128)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkybt"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3wgy"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0.941, 0.631, 1)
+corner_detail = 6
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_cvnsp")
 
@@ -46,3 +62,48 @@ shape = SubResource("RectangleShape2D_cvnsp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.4, 0.4)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -290.25
+offset_right = 43.0
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_fkybt")
+theme_override_styles/fill = SubResource("StyleBoxFlat_x3wgy")
+show_percentage = false
+
+[node name="CoinCount" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -243.0
+offset_bottom = 58.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 42
+text = "Coin: 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="WaveCount" type="Label" parent="CanvasLayer"]
+offset_right = 278.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 42
+text = "Wave: 0"
+vertical_alignment = 1
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -53.5
+offset_right = 53.5
+offset_bottom = 58.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 42
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
