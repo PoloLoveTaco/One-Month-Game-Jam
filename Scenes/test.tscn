@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://l88vdhebidxd" path="res://Scenes/player.tscn" id="1_lc1oi"]
 [ext_resource type="Texture2D" uid="uid://bu5rp4xe3150u" path="res://Assets/Space Background.png" id="2_8od7v"]
 [ext_resource type="Script" uid="uid://cgrglx6omcw3c" path="res://Scripts/parallax.gd" id="2_qc4db"]
-[ext_resource type="PackedScene" uid="uid://d0vg41bhp8vky" path="res://Scenes/coin.tscn" id="4_ys1qc"]
+[ext_resource type="PackedScene" path="res://Scenes/coin.tscn" id="4_ys1qc"]
 
 [node name="Test" type="Node2D"]
 
