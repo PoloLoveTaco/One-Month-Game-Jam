@@ -1,14 +1,21 @@
 extends CharacterBody2D
 
 @export var speed:float = 400
+
 @export var max_health: float = 100
 var health: float
+
+@export var max_coin: int = 999999
+@export var coin: int = 0
 
 @export var weapon_scenes: Array[PackedScene] = [null, null, null, null]
 var weapons: Array = []
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health_bar: ProgressBar = $CanvasLayer/HealthBar
+@onready var coin_count: Label = $CanvasLayer/CoinCount
+@onready var wave_count: Label = $CanvasLayer/WaveCount
+@onready var timer_label: Label = $CanvasLayer/TimerLabel
 
 func _ready() -> void:
 	health = max_health
@@ -16,6 +23,8 @@ func _ready() -> void:
 	health_bar.max_value = max_health
 	health_bar.value = health
 	update_life_bar_color()
+	
+	update_coin_label()
 	
 	for scene in weapon_scenes:
 		if scene == null:
@@ -58,5 +67,17 @@ func update_life_bar_color() -> void:
 	else:
 		fill.bg_color = Color(1.0, 0.496, 0.451)
 	health_bar.add_theme_stylebox_override("fill", fill)
+
+#endregion
+
+#region coin management
+
+func collect_coin():
+	if coin < max_coin:
+		coin = coin + 1
+		update_coin_label()
+
+func update_coin_label():
+	coin_count.text = "Coin: " + str(coin)
 
 #endregion

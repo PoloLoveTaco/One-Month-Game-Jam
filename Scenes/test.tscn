@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8ka3e4k8j8dr"]
+[gd_scene load_steps=5 format=3 uid="uid://c8ka3e4k8j8dr"]
 
 [ext_resource type="PackedScene" uid="uid://l88vdhebidxd" path="res://Scenes/player.tscn" id="1_lc1oi"]
 [ext_resource type="Texture2D" uid="uid://bu5rp4xe3150u" path="res://Assets/Space Background.png" id="2_8od7v"]
 [ext_resource type="Script" uid="uid://cgrglx6omcw3c" path="res://Scripts/parallax.gd" id="2_qc4db"]
+[ext_resource type="PackedScene" uid="uid://d0vg41bhp8vky" path="res://Scenes/coin.tscn" id="4_ys1qc"]
 
 [node name="Test" type="Node2D"]
 
@@ -18,3 +19,6 @@ motion_mirroring = Vector2(5120, 2880)
 modulate = Color(0.41960785, 0.41960785, 0.41960785, 1)
 scale = Vector2(2, 2)
 texture = ExtResource("2_8od7v")
+
+[node name="Coin" parent="." instance=ExtResource("4_ys1qc")]
+position = Vector2(787, 307)
