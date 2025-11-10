@@ -7,6 +7,8 @@ var health: float
 @export var weapon_scenes: Array[PackedScene] = [null, null, null, null]
 var weapons: Array = []
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
 func _ready() -> void:
 	health = max_health
 	
@@ -21,6 +23,11 @@ func _ready() -> void:
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
+	
+	if velocity != Vector2(0, 0):
+		animated_sprite_2d.play("walk")
+	else:
+		animated_sprite_2d.play("default")
 
 func _physics_process(_delta):
 	get_input()
