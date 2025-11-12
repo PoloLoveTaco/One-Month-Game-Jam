@@ -1,11 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://bevrq14voxgdi"]
+[gd_scene load_steps=11 format=3 uid="uid://bevrq14voxgdi"]
 
 [ext_resource type="Script" uid="uid://dilto30o4ij66" path="res://Scripts/shop.gd" id="1_fdj0q"]
 [ext_resource type="Script" uid="uid://ceatpya8csule" path="res://Scripts/upgrade_data.gd" id="2_k6jq0"]
 [ext_resource type="Resource" uid="uid://ds2ij55yopx6t" path="res://Scripts/Resources/ItemData/boots_commun.tres" id="3_3ps1r"]
 [ext_resource type="Resource" uid="uid://6amo8rdbcgme" path="res://Scripts/Resources/ItemData/health_necklace_commun.tres" id="4_3ps1r"]
+[ext_resource type="Resource" uid="uid://d4ccryp050cl8" path="res://Scripts/Resources/ItemData/boots_rare.tres" id="4_tyrku"]
 [ext_resource type="Texture2D" uid="uid://fwurp47bgqcb" path="res://Assets/coin.png" id="4_ymrm4"]
+[ext_resource type="Resource" uid="uid://ctsuxl0ehcmxo" path="res://Scripts/Resources/ItemData/boots_epic.tres" id="5_5xp22"]
 [ext_resource type="PackedScene" uid="uid://c7jqxbr2j6tsi" path="res://Scenes/shop_item.tscn" id="5_k6jq0"]
+[ext_resource type="Resource" uid="uid://d0uyy4sys06d4" path="res://Scripts/Resources/ItemData/boots_leg.tres" id="6_ow1eo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0c07c"]
 bg_color = Color(0.16206557, 0.1620656, 0.16206548, 1)
@@ -19,7 +22,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fdj0q")
-possible_upgrades = Array[ExtResource("2_k6jq0")]([ExtResource("3_3ps1r"), ExtResource("4_3ps1r")])
+possible_upgrades = Array[ExtResource("2_k6jq0")]([ExtResource("3_3ps1r"), ExtResource("4_tyrku"), ExtResource("5_5xp22"), ExtResource("6_ow1eo"), ExtResource("4_3ps1r")])
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
