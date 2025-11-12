@@ -28,6 +28,8 @@ func roll_shop(wave: int, luck: float):
 			return can_show_upgrade(u, wave)
 	)
 	
+	current_choices.clear()
+	
 	for i in range(choices_per_round):
 		var choice = pick_random_upgrade(pool, luck)
 		current_choices.append(choice)
@@ -70,7 +72,8 @@ func update_ui():
 	
 
 func _on_reroll_button_pressed() -> void:
-	pass # Replace with function body.
+	roll_shop(1, player.player_stat.base_stats["luck"])
+	update_ui()
 
 
 func _on_next_wave_button_pressed() -> void:
