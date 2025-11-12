@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://dsjmvsukwy7ss"]
+
+[ext_resource type="Texture2D" uid="uid://b54fba5us17gd" path="res://Assets/PassiveRegenIcon.png" id="1_x5j0j"]
+[ext_resource type="Script" uid="uid://cfwiunhjh3g6p" path="res://Scripts/stat_modifier.gd" id="2_wxb6x"]
+[ext_resource type="Script" uid="uid://sng1chh7b4kc" path="res://Scripts/item_data.gd" id="3_e1liy"]
+
+[resource]
+script = ExtResource("3_e1liy")
+id = &"health_necklace_commu_rn"
+display_name = "Health Necklace"
+description = "Gain passive regen"
+icon = ExtResource("1_x5j0j")
+cost = 30
+metadata/_custom_type_script = "uid://sng1chh7b4kc"

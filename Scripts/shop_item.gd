@@ -1,10 +1,10 @@
 extends Button
 class_name ShopItem
 
-const COLOR_COMMON     = Color(0.2, 0.8, 0.2)
-const COLOR_RARE       = Color(0.2, 0.4, 1.0)
-const COLOR_EPIC       = Color(0.7, 0.2, 0.9)
-const COLOR_LEGENDARY  = Color(1.0, 0.9, 0.2)
+const COLOR_COMMON     = Color(0.2, 0.8, 0.2, 0.2)
+const COLOR_RARE       = Color(0.2, 0.4, 1.0, 0.2)
+const COLOR_EPIC       = Color(0.7, 0.2, 0.9, 0.2)
+const COLOR_LEGENDARY  = Color(1.0, 0.9, 0.2, 0.2)
 
 @onready var item_icon := $Panel/Icon
 @onready var item_name := $Panel/Name
