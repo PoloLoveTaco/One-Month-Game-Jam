@@ -1,21 +1,26 @@
 extends CharacterBody2D
+class_name Player
 
 @export var speed:float = 400
 
 @export var max_health: float = 100
 var health: float
 
-@export var max_coin: int = 999999
-@export var coin: int = 0
+@export var max_coins: int = 999999
+@export var coins: int = 0
 
-@export var weapon_scenes: Array[PackedScene] = [null, null, null, null]
-var weapons: Array = []
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health_bar: ProgressBar = $CanvasLayer/HealthBar
-@onready var coin_count: Label = $CanvasLayer/CoinCount
+@onready var coins_count: Label = $CanvasLayer/CoinCount
 @onready var wave_count: Label = $CanvasLayer/WaveCount
 @onready var timer_label: Label = $CanvasLayer/TimerLabel
+
+
+@onready var player_stat = PlayerStats.new()
+@onready var inventory = PlayerInventory.new()
+
+@onready var shop_scene = preload("res://Scenes/shop.tscn")
 
 func _ready() -> void:
 	health = max_health
@@ -26,14 +31,13 @@ func _ready() -> void:
 	
 	update_coin_label()
 	
-	for scene in weapon_scenes:
-		if scene == null:
-			continue
-		var weapon = scene.instantiate()
-		weapon.owner = self
-		add_child(weapon)
-		weapons.append(weapon)
-
+func _unhandled_input(event: InputEvent) -> void:
+	
+	if event.is_action_pressed("tmp"):
+		var shop = shop_scene.instantiate()
+		get_tree().current_scene.get_node("ShopLayer").add_child(shop)
+	
+	
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
@@ -73,11 +77,24 @@ func update_life_bar_color() -> void:
 #region coin management
 
 func collect_coin():
-	if coin < max_coin:
-		coin = coin + 1
+	if coins < max_coins:
+		coins = coins + 1
 		update_coin_label()
 
 func update_coin_label():
-	coin_count.text = "Coin: " + str(coin)
+	coins_count.text = "Coins: " + str(coins)
 
+#endregion
+
+#region inventory
+func buy_upgrade(upgrade: UpgradeData):
+	if coins < upgrade.cost:
+		return
+	
+	coins -= upgrade.cost
+	
+	if upgrade is WeaponData:
+		inventory.add_weapon(upgrade as WeaponData)
+	elif upgrade is ItemData:
+		player_stat.add_item(upgrade as ItemData)
 #endregion

@@ -1,5 +1,5 @@
-extends UpgradeData
-class_name StatData
+extends Resource
+class_name StatModifier
 
 enum Stat {DAMAGE, MAX_HP, MOVE_SPEED, REGEN, ATTACK_SPEED, CRIT_CHANCE, LUCK}
 

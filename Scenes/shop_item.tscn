@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://c7jqxbr2j6tsi"]
+
+[ext_resource type="Script" uid="uid://cdj5alnlwu60u" path="res://Scripts/shop_item.gd" id="1_b8rhe"]
+[ext_resource type="Texture2D" uid="uid://fwurp47bgqcb" path="res://Assets/coin.png" id="1_wmysf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wmysf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b8rhe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ewy27"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_idtay"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_asrp6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmysf"]
+
+[node name="ShopItem" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wmysf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_b8rhe")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ewy27")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_idtay")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_asrp6")
+script = ExtResource("1_b8rhe")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wmysf")
+
+[node name="Icon" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 9.0
+offset_right = 20.0
+offset_bottom = 49.0
+grow_horizontal = 2
+
+[node name="Name" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -31.0
+offset_right = 23.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Boots"
+
+[node name="Desc" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -87.0
+offset_top = -83.0
+offset_right = 87.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Gain movement speed"
+
+[node name="Cost" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="GoldIcon" type="TextureRect" parent="Panel/Cost"]
+layout_mode = 2
+size_flags_horizontal = 10
+texture = ExtResource("1_wmysf")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="PriceLabel" type="Label" parent="Panel/Cost"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 1
+text = "50"
