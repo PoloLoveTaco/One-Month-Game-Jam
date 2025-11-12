@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dilto30o4ij66" path="res://Scripts/shop.gd" id="1_fdj0q"]
 [ext_resource type="Script" uid="uid://ceatpya8csule" path="res://Scripts/upgrade_data.gd" id="2_k6jq0"]
-[ext_resource type="Resource" uid="uid://ds2ij55yopx6t" path="res://Scripts/Resources/ItemData/boots.tres" id="3_3ps1r"]
-[ext_resource type="Resource" uid="uid://6amo8rdbcgme" path="res://Scripts/Resources/ItemData/health_necklace.tres" id="4_3ps1r"]
+[ext_resource type="Resource" uid="uid://ds2ij55yopx6t" path="res://Scripts/Resources/ItemData/boots_commun.tres" id="3_3ps1r"]
+[ext_resource type="Resource" uid="uid://6amo8rdbcgme" path="res://Scripts/Resources/ItemData/health_necklace_commun.tres" id="4_3ps1r"]
 [ext_resource type="Texture2D" uid="uid://fwurp47bgqcb" path="res://Assets/coin.png" id="4_ymrm4"]
 [ext_resource type="PackedScene" uid="uid://c7jqxbr2j6tsi" path="res://Scenes/shop_item.tscn" id="5_k6jq0"]
 

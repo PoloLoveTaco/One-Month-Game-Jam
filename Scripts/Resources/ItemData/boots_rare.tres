@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://d4ccryp050cl8"]
+
+[ext_resource type="Texture2D" uid="uid://bnh2hcgvwcqu" path="res://Assets/MoveSpeedIcon.png" id="1_e12u0"]
+[ext_resource type="Script" uid="uid://cfwiunhjh3g6p" path="res://Scripts/stat_modifier.gd" id="2_syoj7"]
+[ext_resource type="Script" uid="uid://sng1chh7b4kc" path="res://Scripts/item_data.gd" id="3_pcmor"]
+
+[sub_resource type="Resource" id="Resource_h40hs"]
+script = ExtResource("2_syoj7")
+stat = 2
+percent_bonus = 10.0
+metadata/_custom_type_script = "uid://cfwiunhjh3g6p"
+
+[resource]
+script = ExtResource("3_pcmor")
+modifiers = Array[ExtResource("2_syoj7")]([SubResource("Resource_h40hs")])
+id = &"boots_rare"
+display_name = "Boots"
+description = "Gain movement speed"
+icon = ExtResource("1_e12u0")
+cost = 30
+rarity = 2
+metadata/_custom_type_script = "uid://sng1chh7b4kc"

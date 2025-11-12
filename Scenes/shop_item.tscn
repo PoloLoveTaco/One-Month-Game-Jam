@@ -13,7 +13,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_asrp6"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmysf"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tga60"]
 
 [node name="ShopItem" type="Button"]
 offset_right = 8.0
@@ -30,7 +30,16 @@ custom_minimum_size = Vector2(200, 200)
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 200.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_wmysf")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tga60")
+
+[node name="Background" type="ColorRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.05882353, 1, 1)
 
 [node name="Icon" type="TextureRect" parent="Panel"]
 layout_mode = 1
@@ -56,22 +65,22 @@ offset_right = 23.0
 offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Boots"
+text = "Item Name"
 
 [node name="Desc" type="Label" parent="Panel"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -87.0
-offset_top = -83.0
-offset_right = 87.0
-offset_bottom = -60.0
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 17.0
+offset_bottom = 40.0
 grow_horizontal = 2
-grow_vertical = 0
-text = "Gain movement speed"
+grow_vertical = 2
+text = "Item description"
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 2
 
 [node name="Cost" type="HBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -95,4 +104,4 @@ stretch_mode = 5
 layout_mode = 2
 size_flags_horizontal = 7
 size_flags_vertical = 1
-text = "50"
+text = "999"
