@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bevrq14voxgdi"]
 
-[ext_resource type="Script" uid="uid://dilto30o4ij66" path="res://Scripts/shop.gd" id="1_fdj0q"]
-[ext_resource type="Script" uid="uid://ceatpya8csule" path="res://Scripts/upgrade_data.gd" id="2_k6jq0"]
+[ext_resource type="Script" path="res://Scripts/shop.gd" id="1_fdj0q"]
+[ext_resource type="Script" path="res://Scripts/upgrade_data.gd" id="2_k6jq0"]
 [ext_resource type="Resource" uid="uid://ds2ij55yopx6t" path="res://Scripts/Resources/ItemData/boots_commun.tres" id="3_3ps1r"]
 [ext_resource type="Resource" uid="uid://6amo8rdbcgme" path="res://Scripts/Resources/ItemData/health_necklace_commun.tres" id="4_3ps1r"]
 [ext_resource type="Resource" uid="uid://d4ccryp050cl8" path="res://Scripts/Resources/ItemData/boots_rare.tres" id="4_tyrku"]
@@ -14,7 +14,7 @@
 [ext_resource type="Resource" uid="uid://c6l1l8rcjskef" path="res://Scripts/Resources/ItemData/health_necklace_leg.tres" id="10_1cyt5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0c07c"]
-bg_color = Color(0.16206557, 0.1620656, 0.16206548, 1)
+bg_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
 
 [node name="Shop" type="Control"]
 process_mode = 2

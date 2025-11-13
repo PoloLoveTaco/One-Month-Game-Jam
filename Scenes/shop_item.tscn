@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c7jqxbr2j6tsi"]
 
-[ext_resource type="Script" uid="uid://cdj5alnlwu60u" path="res://Scripts/shop_item.gd" id="1_b8rhe"]
+[ext_resource type="Script" path="res://Scripts/shop_item.gd" id="1_b8rhe"]
 [ext_resource type="Texture2D" uid="uid://fwurp47bgqcb" path="res://Assets/coin.png" id="1_wmysf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wmysf"]
@@ -13,7 +13,18 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_asrp6"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tga60"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b8rhe"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.9691369, 0.9691369, 0.9691368, 1)
+corner_detail = 5
 
 [node name="ShopItem" type="Button"]
 offset_right = 8.0
@@ -30,7 +41,7 @@ custom_minimum_size = Vector2(200, 200)
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 200.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_tga60")
+theme_override_styles/panel = SubResource("StyleBoxFlat_b8rhe")
 
 [node name="Background" type="ColorRect" parent="Panel"]
 layout_mode = 1
@@ -47,9 +58,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -20.0
-offset_top = 9.0
+offset_top = 16.785
 offset_right = 20.0
-offset_bottom = 49.0
+offset_bottom = 56.785
 grow_horizontal = 2
 
 [node name="Name" type="Label" parent="Panel"]
@@ -88,7 +99,8 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -23.0
+offset_top = -37.14
+offset_bottom = -14.139999
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 8
