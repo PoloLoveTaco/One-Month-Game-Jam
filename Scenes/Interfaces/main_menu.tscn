@@ -57,7 +57,7 @@ theme_override_constants/separation = 10
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 24
-text = "SELECT LEVEL"
+text = "SELECT STAGE"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="One Month Game"
-run/main_scene="uid://c8ka3e4k8j8dr"
+run/main_scene="uid://bihreyct4usw7"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
