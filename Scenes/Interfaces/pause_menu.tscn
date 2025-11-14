@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxhtrfnpwxg6h"]
+
+[ext_resource type="Script" uid="uid://d1livuvwvm3b7" path="res://Scripts/pause_menu.gd" id="1_jcca3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a1rq5"]
+font_size = 82
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_jcca3")
+
+[node name="Panel" type="Panel" parent="."]
+process_mode = 2
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 97.58
+offset_right = 128.0
+offset_bottom = 210.58005
+grow_horizontal = 2
+text = "PAUSE"
+label_settings = SubResource("LabelSettings_a1rq5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -31.640015
+offset_right = 205.0
+offset_bottom = 118.36008
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Resume" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "RESUME"
+
+[node name="GoToMain" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "GO TO MAIN MENU"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/GoToMain" to="." method="_on_go_to_main_pressed"]

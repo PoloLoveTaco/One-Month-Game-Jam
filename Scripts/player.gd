@@ -8,10 +8,10 @@ var health: float
 
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var health_bar: ProgressBar = $CanvasLayer/HealthBar
-@onready var coins_count: Label = $CanvasLayer/CoinCount
-@onready var wave_count: Label = $CanvasLayer/WaveCount
-@onready var timer_label: Label = $CanvasLayer/TimerLabel
+@onready var health_bar: ProgressBar = $UIPlayer/HealthBar
+@onready var coins_count: Label = $UIPlayer/CoinCount
+@onready var wave_count: Label = $UIPlayer/WaveCount
+@onready var timer_label: Label = $UIPlayer/TimerLabel
 
 
 @onready var player_stat = PlayerStats.new()
