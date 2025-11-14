@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bevrq14voxgdi"]
+[gd_scene load_steps=16 format=3 uid="uid://bevrq14voxgdi"]
 
 [ext_resource type="Script" uid="uid://dilto30o4ij66" path="res://Scripts/shop.gd" id="1_fdj0q"]
 [ext_resource type="Script" uid="uid://ceatpya8csule" path="res://Scripts/upgrade_data.gd" id="2_k6jq0"]
@@ -12,6 +12,14 @@
 [ext_resource type="Resource" uid="uid://dsjmvsukwy7ss" path="res://Scripts/Resources/ItemData/health_necklace_rare.tres" id="8_k6pkm"]
 [ext_resource type="Resource" uid="uid://beh0vck5chg66" path="res://Scripts/Resources/ItemData/health_necklace_epic.tres" id="9_1sjcd"]
 [ext_resource type="Resource" uid="uid://c6l1l8rcjskef" path="res://Scripts/Resources/ItemData/health_necklace_leg.tres" id="10_1cyt5"]
+[ext_resource type="Shader" uid="uid://bht4kxku6c3l1" path="res://Assets/Shaders/shop_background.gdshader" id="11_c7i5m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4fbdm"]
+shader = ExtResource("11_c7i5m")
+shader_parameter/stripes = 18.015
+shader_parameter/stripe_thickness = 1.33
+shader_parameter/stripe_color = Color(0.5882353, 0.98039216, 1, 1)
+shader_parameter/background_color = Color(0, 0.23137255, 0.29411766, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0c07c"]
 bg_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
@@ -28,6 +36,7 @@ script = ExtResource("1_fdj0q")
 possible_upgrades = Array[ExtResource("2_k6jq0")]([ExtResource("3_3ps1r"), ExtResource("4_tyrku"), ExtResource("5_5xp22"), ExtResource("6_ow1eo"), ExtResource("4_3ps1r"), ExtResource("8_k6pkm"), ExtResource("9_1sjcd"), ExtResource("10_1cyt5")])
 
 [node name="Panel" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_4fbdm")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
