@@ -1,11 +1,8 @@
 extends Control
 
-func _ready() -> void:
-	print(get_tree().paused)
-
 
 func _on_select_level_pressed() -> void:
-	print("play")
+	get_tree().change_scene_to_file("res://Scenes/Interfaces/select_level.tscn")
 
 
 func _on_settings_pressed() -> void:
