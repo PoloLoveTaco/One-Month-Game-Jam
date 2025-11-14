@@ -10,3 +10,7 @@ func _on_button_pressed() -> void:
 
 func _on_test_1_pressed() -> void:
 	level_to_play = "res://Scenes/Maps/test.tscn"
+
+
+func _on_test_2_pressed() -> void:
+	level_to_play = "res://Scenes/Maps/test_2.tscn"
