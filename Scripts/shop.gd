@@ -9,6 +9,13 @@ var current_choices: Array[UpgradeData] = []
 @onready var coins_label := $Panel/Header/Gold/GoldLabel
 @onready var upgrades_grid := $Panel/GridContainer
 
+@onready var shop_item_1: ShopItem = $Panel/GridContainer/ShopItem1
+@onready var shop_item_2: ShopItem = $Panel/GridContainer/ShopItem2
+@onready var shop_item_3: ShopItem = $Panel/GridContainer/ShopItem3
+@onready var shop_item_4: ShopItem = $Panel/GridContainer/ShopItem4
+@onready var shop_item_5: ShopItem = $Panel/GridContainer/ShopItem5
+
+
 @onready var shop_item_scene := preload("res://Scenes/Interfaces/shop.tscn")
 
 var player : Player
@@ -67,11 +74,11 @@ func pick_random_upgrade(pool: Array[UpgradeData], luck: float):
 
 
 func update_ui():
-	$Panel/GridContainer/ShopItem.set_item(current_choices[0])
-	$Panel/GridContainer/ShopItem2.set_item(current_choices[1])
-	$Panel/GridContainer/ShopItem3.set_item(current_choices[2])
-	$Panel/GridContainer/ShopItem4.set_item(current_choices[3])
-	$Panel/GridContainer/ShopItem5.set_item(current_choices[4])
+	shop_item_1.set_item(current_choices[0])
+	shop_item_2.set_item(current_choices[1])
+	shop_item_3.set_item(current_choices[2])
+	shop_item_4.set_item(current_choices[3])
+	shop_item_5.set_item(current_choices[4])
 
 
 func _on_reroll_button_pressed() -> void:
@@ -85,25 +92,35 @@ func _on_next_wave_button_pressed() -> void:
 
 
 func _on_shop_item_pressed() -> void:
-	print("1")
-	player.player_stat.add_item(current_choices[0])
+	if shop_item_1.is_buyable:
+		print("1")
+		player.player_stat.add_item(current_choices[0])
+		shop_item_1.buy_item()
 
 
 func _on_shop_item_2_pressed() -> void:
-	print("2")
-	player.player_stat.add_item(current_choices[1])
+	if shop_item_2.is_buyable:
+		print("2")
+		player.player_stat.add_item(current_choices[1])
+		shop_item_2.buy_item()
 
 
 func _on_shop_item_3_pressed() -> void:
-	print("3")
-	player.player_stat.add_item(current_choices[2])
+	if shop_item_3.is_buyable:
+		print("3")
+		player.player_stat.add_item(current_choices[2])
+		shop_item_3.buy_item()
 
 
 func _on_shop_item_4_pressed() -> void:
-	print("4")
-	player.player_stat.add_item(current_choices[3])
+	if shop_item_4.is_buyable:
+		print("4")
+		player.player_stat.add_item(current_choices[3])
+		shop_item_4.buy_item()
 
 
 func _on_shop_item_5_pressed() -> void:
-	print("5")
-	player.player_stat.add_item(current_choices[4])
+	if shop_item_5.is_buyable:
+		print("5")
+		player.player_stat.add_item(current_choices[4])
+		shop_item_5.buy_item()

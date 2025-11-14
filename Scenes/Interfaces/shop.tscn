@@ -91,7 +91,7 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 5
 
-[node name="ShopItem" parent="Panel/GridContainer" instance=ExtResource("5_k6jq0")]
+[node name="ShopItem1" parent="Panel/GridContainer" instance=ExtResource("5_k6jq0")]
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -135,7 +135,7 @@ size_flags_horizontal = 7
 size_flags_vertical = 5
 text = "Nex wave"
 
-[connection signal="pressed" from="Panel/GridContainer/ShopItem" to="." method="_on_shop_item_pressed"]
+[connection signal="pressed" from="Panel/GridContainer/ShopItem1" to="." method="_on_shop_item_pressed"]
 [connection signal="pressed" from="Panel/GridContainer/ShopItem2" to="." method="_on_shop_item_2_pressed"]
 [connection signal="pressed" from="Panel/GridContainer/ShopItem3" to="." method="_on_shop_item_3_pressed"]
 [connection signal="pressed" from="Panel/GridContainer/ShopItem4" to="." method="_on_shop_item_4_pressed"]
