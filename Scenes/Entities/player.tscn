@@ -75,6 +75,7 @@ offset_right = 43.0
 grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_fkybt")
 theme_override_styles/fill = SubResource("StyleBoxFlat_x3wgy")
+fill_mode = 3
 show_percentage = false
 
 [node name="CoinCount" type="Label" parent="CanvasLayer"]

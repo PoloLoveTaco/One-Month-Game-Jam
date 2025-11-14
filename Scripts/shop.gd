@@ -10,7 +10,7 @@ var current_choices: Array[UpgradeData] = []
 @onready var upgrades_grid := $Panel/GridContainer
 
 
-@onready var shop_item_scene := preload("res://Scenes/shop_item.tscn")
+@onready var shop_item_scene := preload("res://Scenes/Interfaces/shop.tscn")
 
 var player : Player
 

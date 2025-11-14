@@ -20,7 +20,7 @@ var health: float
 @onready var player_stat = PlayerStats.new()
 @onready var inventory = PlayerInventory.new()
 
-@onready var shop_scene = preload("res://Scenes/shop.tscn")
+@onready var shop_scene = preload("res://Scenes/Interfaces/shop.tscn")
 
 func _ready() -> void:
 	health = max_health

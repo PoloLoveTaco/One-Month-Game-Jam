@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnw04wcwiet38"]
+
+[ext_resource type="Script" uid="uid://ehrxi3me8fwx" path="res://Scripts/enemy.gd" id="1_o6kgl"]
+[ext_resource type="Texture2D" uid="uid://o4tig0mcsjo6" path="res://icon.svg" id="1_r2gkr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojpym"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r2gkr"]
+size = Vector2(142, 140)
+
+[node name="Enemy" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_o6kgl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_r2gkr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ojpym")
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_r2gkr")
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
