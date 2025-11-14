@@ -18,11 +18,23 @@ func _ready() -> void:
 	health = max_health
 	attack_timer.wait_time = attack_cooldown
 	attack_timer.one_shot = true
+	player = get_tree().get_first_node_in_group("player")
 
 
 func _process(_delta: float) -> void:
 	if player_in_range and can_attack:
 		attack()
+
+
+func _physics_process(delta):
+	if player and not player_in_range:
+		follow_player()
+
+
+func follow_player() -> void:
+	var direction = (player.global_position - global_position).normalized()
+	linear_velocity = direction * move_speed
+
 
 #region combat
 
@@ -47,13 +59,14 @@ func die() -> void:
 #endregion
 
 #region signals
-func _on_detection_area_body_entered(body: Node2D) -> void:
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player = body
 		player_in_range = true
 
 
-func _on_detection_area_body_exited(body: Node2D) -> void:
+func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_range = false
 

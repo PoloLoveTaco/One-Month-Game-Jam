@@ -15,6 +15,14 @@ run/main_scene="uid://c8ka3e4k8j8dr"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[file_customization]
+
+folder_colors={
+"res://Assets/": "purple",
+"res://Scenes/": "orange",
+"res://Scripts/": "green"
+}
+
 [global_group]
 
 player=""
