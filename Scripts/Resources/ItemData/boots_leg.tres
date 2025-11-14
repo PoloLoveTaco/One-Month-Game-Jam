@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://d0uyy4sys06d4"]
 
 [ext_resource type="Texture2D" uid="uid://bnh2hcgvwcqu" path="res://Assets/MoveSpeedIcon.png" id="1_y542e"]
-[ext_resource type="Script" uid="uid://cfwiunhjh3g6p" path="res://Scripts/stat_modifier.gd" id="2_eub5e"]
-[ext_resource type="Script" uid="uid://sng1chh7b4kc" path="res://Scripts/item_data.gd" id="3_hlj0s"]
+[ext_resource type="Script" path="res://Scripts/stat_modifier.gd" id="2_eub5e"]
+[ext_resource type="Script" path="res://Scripts/item_data.gd" id="3_hlj0s"]
 
 [sub_resource type="Resource" id="Resource_h40hs"]
 script = ExtResource("2_eub5e")
