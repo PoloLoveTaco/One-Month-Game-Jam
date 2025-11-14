@@ -1,9 +1,6 @@
 extends CharacterBody2D
 class_name Player
 
-@export var speed:float = 400
-
-@export var max_health: float = 100
 var health: float
 
 @export var max_coins: int = 999999
@@ -23,9 +20,9 @@ var health: float
 @onready var shop_scene = preload("res://Scenes/Interfaces/shop.tscn")
 
 func _ready() -> void:
-	health = max_health
+	health = player_stat.base_stats["max_hp"]
 	
-	health_bar.max_value = max_health
+	health_bar.max_value = player_stat.base_stats["max_hp"]
 	health_bar.value = health
 	update_life_bar_color()
 	
@@ -40,7 +37,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
-	velocity = input_direction * speed
+	velocity = input_direction * player_stat.base_stats["move_speed"]
 	
 	if velocity != Vector2(0, 0):
 		animated_sprite_2d.play("walk")
@@ -61,7 +58,7 @@ func take_damage(amount: float):
 		queue_free()
 
 func update_life_bar_color() -> void:
-	var health_pourcent := health / max_health
+	var health_pourcent = health / player_stat.base_stats["max_hp"]
 
 	var fill := StyleBoxFlat.new()
 	if health_pourcent > 0.50:

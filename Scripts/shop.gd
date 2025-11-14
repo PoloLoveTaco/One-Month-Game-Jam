@@ -79,3 +79,23 @@ func _on_reroll_button_pressed() -> void:
 func _on_next_wave_button_pressed() -> void:
 	get_tree().paused = false
 	queue_free()
+
+
+func _on_shop_item_pressed() -> void:
+	player.player_stat.add_item(current_choices[0])
+
+
+func _on_shop_item_2_pressed() -> void:
+	player.player_stat.add_item(current_choices[1])
+
+
+func _on_shop_item_3_pressed() -> void:
+	player.player_stat.add_item(current_choices[2])
+
+
+func _on_shop_item_4_pressed() -> void:
+	player.player_stat.add_item(current_choices[3])
+
+
+func _on_shop_item_5_pressed() -> void:
+	player.player_stat.add_item(current_choices[4])

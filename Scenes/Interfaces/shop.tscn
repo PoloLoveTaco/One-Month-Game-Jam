@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bevrq14voxgdi"]
 
-[ext_resource type="Script" path="res://Scripts/shop.gd" id="1_fdj0q"]
-[ext_resource type="Script" path="res://Scripts/upgrade_data.gd" id="2_k6jq0"]
+[ext_resource type="Script" uid="uid://dilto30o4ij66" path="res://Scripts/shop.gd" id="1_fdj0q"]
+[ext_resource type="Script" uid="uid://ceatpya8csule" path="res://Scripts/upgrade_data.gd" id="2_k6jq0"]
 [ext_resource type="Resource" uid="uid://ds2ij55yopx6t" path="res://Scripts/Resources/ItemData/boots_commun.tres" id="3_3ps1r"]
 [ext_resource type="Resource" uid="uid://6amo8rdbcgme" path="res://Scripts/Resources/ItemData/health_necklace_commun.tres" id="4_3ps1r"]
 [ext_resource type="Resource" uid="uid://d4ccryp050cl8" path="res://Scripts/Resources/ItemData/boots_rare.tres" id="4_tyrku"]
@@ -34,6 +34,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0c07c")
 
 [node name="Header" type="HBoxContainer" parent="Panel"]
@@ -125,5 +126,10 @@ size_flags_horizontal = 7
 size_flags_vertical = 5
 text = "Nex wave"
 
+[connection signal="pressed" from="Panel/GridContainer/ShopItem" to="." method="_on_shop_item_pressed"]
+[connection signal="pressed" from="Panel/GridContainer/ShopItem2" to="." method="_on_shop_item_2_pressed"]
+[connection signal="pressed" from="Panel/GridContainer/ShopItem3" to="." method="_on_shop_item_3_pressed"]
+[connection signal="pressed" from="Panel/GridContainer/ShopItem4" to="." method="_on_shop_item_4_pressed"]
+[connection signal="pressed" from="Panel/GridContainer/ShopItem5" to="." method="_on_shop_item_5_pressed"]
 [connection signal="pressed" from="Panel/Footer/RerollButton" to="." method="_on_reroll_button_pressed"]
 [connection signal="pressed" from="Panel/Footer/NextWaveButton" to="." method="_on_next_wave_button_pressed"]

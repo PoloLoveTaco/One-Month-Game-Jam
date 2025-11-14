@@ -4,7 +4,7 @@ class_name PlayerStats
 var base_stats = {
 	"damage": 1.0,
 	"max_hp": 100.0,
-	"move_speed": 200.0,
+	"move_speed": 400.0,
 	"regen": 0.0,
 	"attack_speed": 1.0,
 	"crit_chance": 0.0,

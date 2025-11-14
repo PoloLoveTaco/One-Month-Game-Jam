@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c7jqxbr2j6tsi"]
 
-[ext_resource type="Script" path="res://Scripts/shop_item.gd" id="1_b8rhe"]
+[ext_resource type="Script" uid="uid://cdj5alnlwu60u" path="res://Scripts/shop_item.gd" id="1_b8rhe"]
 [ext_resource type="Texture2D" uid="uid://fwurp47bgqcb" path="res://Assets/coin.png" id="1_wmysf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wmysf"]
@@ -41,6 +41,7 @@ custom_minimum_size = Vector2(200, 200)
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 200.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b8rhe")
 
 [node name="Background" type="ColorRect" parent="Panel"]
@@ -70,9 +71,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -22.0
+offset_left = -43.0
 offset_top = -31.0
-offset_right = 23.0
+offset_right = 44.0
 offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -85,7 +86,7 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_top = 17.0
-offset_bottom = 40.0
+offset_bottom = 66.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Item description"
@@ -100,6 +101,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -37.14
+offset_right = 51.0
 offset_bottom = -14.139999
 grow_horizontal = 2
 grow_vertical = 0
