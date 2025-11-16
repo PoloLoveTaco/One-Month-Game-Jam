@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://c8ka3e4k8j8dr"]
+[gd_scene load_steps=11 format=4 uid="uid://c8ka3e4k8j8dr"]
 
 [ext_resource type="PackedScene" uid="uid://l88vdhebidxd" path="res://Scenes/Entities/player.tscn" id="1_18jrj"]
 [ext_resource type="Texture2D" uid="uid://cwqtlfhhr61ko" path="res://Assets/TileSheets/001.png" id="1_nf1g3"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d0vg41bhp8vky" path="res://Scenes/Items/coin.tscn" id="4_nf1g3"]
 [ext_resource type="PackedScene" uid="uid://bnw04wcwiet38" path="res://Scenes/Entities/enemy.tscn" id="5_qma3m"]
 [ext_resource type="PackedScene" uid="uid://dxhtrfnpwxg6h" path="res://Scenes/Interfaces/pause_menu.tscn" id="6_ojpym"]
+[ext_resource type="PackedScene" uid="uid://cqre4a2c1odu2" path="res://Scenes/Entities/enemy_distant.tscn" id="7_d10jg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d10jg"]
 texture = ExtResource("1_nf1g3")
@@ -37,7 +38,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("3_ojpym")
 
 [node name="Coin" parent="." instance=ExtResource("4_nf1g3")]
-position = Vector2(787, 307)
+position = Vector2(817, 347)
 
 [node name="Enemies" type="Node" parent="."]
 
@@ -49,6 +50,15 @@ position = Vector2(-1778, 1112)
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource("5_qma3m")]
 position = Vector2(-1102, -593)
+
+[node name="Enemy Distant" parent="Enemies" instance=ExtResource("7_d10jg")]
+position = Vector2(881, 639)
+
+[node name="Enemy Distant2" parent="Enemies" instance=ExtResource("7_d10jg")]
+position = Vector2(114, -1009)
+
+[node name="Enemy Distant3" parent="Enemies" instance=ExtResource("7_d10jg")]
+position = Vector2(-1420, 659)
 
 [node name="ShopLayer" type="CanvasLayer" parent="."]
 layer = 3

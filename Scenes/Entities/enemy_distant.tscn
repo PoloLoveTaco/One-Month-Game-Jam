@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnw04wcwiet38"]
+[gd_scene load_steps=6 format=3 uid="uid://cqre4a2c1odu2"]
 
-[ext_resource type="Script" uid="uid://ehrxi3me8fwx" path="res://Scripts/enemy.gd" id="1_o6kgl"]
-[ext_resource type="Texture2D" uid="uid://o4tig0mcsjo6" path="res://icon.svg" id="1_r2gkr"]
+[ext_resource type="Script" uid="uid://dujve0q62xit4" path="res://Scripts/enemy_distant.gd" id="1_28otx"]
+[ext_resource type="PackedScene" uid="uid://dyjvwkwc0n7tr" path="res://Scenes/enemy_projectile.tscn" id="2_6asl7"]
+[ext_resource type="Texture2D" uid="uid://o4tig0mcsjo6" path="res://icon.svg" id="2_dp1dk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ojpym"]
 size = Vector2(128, 128)
@@ -9,18 +10,24 @@ size = Vector2(128, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r2gkr"]
 size = Vector2(142, 140)
 
-[node name="Enemy" type="RigidBody2D"]
+[node name="Enemy Distant" type="RigidBody2D"]
 gravity_scale = 0.0
-script = ExtResource("1_o6kgl")
-move_speed = 120.0
+script = ExtResource("1_28otx")
+BULLET = ExtResource("2_6asl7")
+move_speed = 40.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_r2gkr")
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_dp1dk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ojpym")
 
 [node name="AttackTimer" type="Timer" parent="."]
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -28,5 +35,6 @@ shape = SubResource("RectangleShape2D_ojpym")
 shape = SubResource("RectangleShape2D_r2gkr")
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
